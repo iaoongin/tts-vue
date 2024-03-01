@@ -43,9 +43,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: tts-vue-${{ matrix. os }}
-          path: release/*/*.dmg
-          retention-days: 30
+      - name: List Artifact
+        run: ls -l release/*
+      
+
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: tts-vue-${{ matrix. os }}
+      #     path: release/*/*.dmg
+      #     retention-days: 30
